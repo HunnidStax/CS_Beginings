@@ -22,7 +22,7 @@ namespace L2
                     Console.Write("Максимальная:");
                     int High = Convert.ToInt32(Console.ReadLine());
 
-                    Aver = (Low + High) / 2;
+                    int Aver = (Low + High) / 2;
                     Console.WriteLine($"Средняя температура за день: {Aver}");
 
                     //2
