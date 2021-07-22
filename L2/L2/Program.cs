@@ -6,7 +6,6 @@ namespace L2
     {
         static void Main(string[] args)
         {
-            int Aver = 0;
             Console.WriteLine("Введите:\n1 - для вывода 1, 2 и 5 задания\n2 - для вывода 3 задания\n3 - для вывода 4 задания\n4 - для вывода 6 задания");
             int choice = Convert.ToInt32(Console.ReadLine());
 
