@@ -6,7 +6,7 @@ namespace L2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите:\n1 - для вывода 1, 2 и 5 задания\n2 - для вывода 3 задания\n3 - для вывода 4 задания\n4 - для вывода 6 задания");
+            Console.WriteLine("Введите:\n1 - для вывода 1, 2, 3 и 5 задания\n2 - для вывода 4 задания\n3 - для вывода 6 задания\n");
             int choice = Convert.ToInt32(Console.ReadLine());
 
             switch (choice)
@@ -92,26 +92,19 @@ namespace L2
                     {
                         Console.WriteLine("Ноябрь.");
                     }
-                    break;
-
-                case 2:
-
+                    
                     //3
-                    Console.WriteLine("Введите число:");
-                    int digit = Convert.ToInt32(Console.ReadLine());
-
-                    if (digit % 2 == 0)
+                    if (Month % 2 == 0)
                     {
-                        Console.WriteLine($"Число {digit} четное.");
+                        Console.WriteLine($"Число {Month} четное.");
                     }
                     else
                     {
-                        Console.WriteLine($"Число {digit} нечетное.");
+                        Console.WriteLine($"Число {Month} нечетное.");
                     }
-
                     break;
 
-                case 3:
+                case 2:
 
                     //4
                     int nomercheka = 4;
@@ -124,10 +117,57 @@ namespace L2
                     Console.WriteLine($"******************************\n                              \n.......Касоовый чек № {nomercheka}.......\nПродукт...................Цена\n                              \n{product1}..................{price1}\n{product2}....................{price2}\n                              \nДата покупки: {date1.ToShortDateString()}......\n                              \n******************************");
 
                     break;
-                
 
+                case 3:
                     //6
 
+                    //дни работы офисов
+                    int office1 = 0b1010101;
+                    int office2 = 0b0011110;
+
+                    //день недедли
+                    int mon = 0b1000000;
+                    int tue = 0b0100000;
+                    int wen = 0b0010000;
+                    int thu = 0b0001000;
+                    int fri = 0b0000100;
+                    int sat = 0b0000010;
+                    int sun = 0b0000001;
+
+                    int cen = mon & office1;
+                    int cen2 = mon & office2;
+                    int cen3 = tue & office1;
+                    int cen4 = tue & office2;
+                    int cen5 = wen & office1;
+                    int cen6 = wen & office2;
+                    int cen7 = thu & office1;
+                    int cen8 = thu & office2;
+                    int cen9 = fri & office1;
+                    int cen10 = fri & office2;
+                    int cen11 = sat & office1;
+                    int cen12 = sat & office2;
+                    int cen13 = sun & office1;
+                    int cen14 = sun & office2;
+
+                    Console.WriteLine("В какие дни работает первый офис");
+                    Console.WriteLine($"Понедельник {cen == mon}");
+                    Console.WriteLine($"Вторник {cen3 == tue}");
+                    Console.WriteLine($"Среда {cen5 == wen}");
+                    Console.WriteLine($"Четверг {cen7 == thu}");
+                    Console.WriteLine($"Пятница {cen9 == fri}");
+                    Console.WriteLine($"Суббота {cen11 == sat}");
+                    Console.WriteLine($"Воскресенье {cen13 == sun}");
+
+                    Console.WriteLine("В какие дни работает второй офис");
+                    Console.WriteLine($"Понедельник {cen2 == mon}");
+                    Console.WriteLine($"Вторник {cen4 == tue}");
+                    Console.WriteLine($"Среда {cen6 == wen}");
+                    Console.WriteLine($"Четверг {cen8 == thu}");
+                    Console.WriteLine($"Пятница {cen10 == fri}");
+                    Console.WriteLine($"Суббота {cen12 == sat}");
+                    Console.WriteLine($"Воскресенье {cen14 == sun}");
+
+                    break;
             }
         }
     }
